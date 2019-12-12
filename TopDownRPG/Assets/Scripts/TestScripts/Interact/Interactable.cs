@@ -7,12 +7,13 @@ public class Interactable : MonoBehaviour
     bool isFocus=false;
     bool hasInteracted=false;
     Transform player;
+    private DialogueManager ConverationTrig;
     public Transform interactionTransform;
 
     public virtual void Interact()
     {
             //This method is meant to be overwritten
-            Debug.Log("Interact");
+            //Debug.Log("Interact");
 
     }
     void Update(){
@@ -30,6 +31,7 @@ public class Interactable : MonoBehaviour
         hasInteracted=false;
     }
     public void OnDefocused(){
+        FindObjectOfType<DialogueManager>().EndDialogue();
         isFocus=false;
         player=null;
         hasInteracted=false;

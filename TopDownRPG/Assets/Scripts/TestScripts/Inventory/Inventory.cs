@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     void Awake(){
         if(instance!=null){
             Debug.LogWarning("More than one instance of inventory found");
+            return;
         }
         instance=this;
     }
@@ -18,6 +19,7 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
     public List<Item> items=new List<Item>();
     public int space=20;
+    
     public bool Add(Item item){
         if(!item.isDefaultItem){
             if(items.Count>=space){
