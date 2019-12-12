@@ -255,7 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dad8900a4aabaf47a53ab49c9b82a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
   space: 9
 --- !u!4 &106605236
 Transform:
@@ -3691,7 +3693,7 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - You got a sword
+    - You got a Shield
 --- !u!4 &1933487721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8775899231210305783, guid: 004276cc684524df7a90cd6c927a83d2,
@@ -4013,7 +4015,7 @@ PrefabInstance:
     - target: {fileID: 8775899231210305783, guid: 004276cc684524df7a90cd6c927a83d2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.202
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 8775899231210305783, guid: 004276cc684524df7a90cd6c927a83d2,
         type: 3}

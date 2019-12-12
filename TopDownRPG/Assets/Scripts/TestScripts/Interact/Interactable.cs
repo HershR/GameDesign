@@ -31,7 +31,7 @@ public class Interactable : MonoBehaviour
         hasInteracted=false;
     }
     public void OnDefocused(){
-        FindObjectOfType<DialogueManager>().EndDialogue();
+        
         isFocus=false;
         player=null;
         hasInteracted=false;

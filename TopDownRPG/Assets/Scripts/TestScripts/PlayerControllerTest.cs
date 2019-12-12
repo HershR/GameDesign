@@ -54,8 +54,9 @@ public class PlayerControllerTest : MonoBehaviour
     }
     void RemoveFoucs(){
         if(focus!=null)
-        focus.OnDefocused();
-        focus=null;
-        motor.StopFollowingTarget();
+            FindObjectOfType<DialogueManager>().EndDialogue();
+            focus.OnDefocused();
+            focus=null;
+            motor.StopFollowingTarget();
     }
 }
