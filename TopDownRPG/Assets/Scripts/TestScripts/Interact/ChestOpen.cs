@@ -9,7 +9,7 @@ public class ChestOpen : Interactable
         base.Interact();
         Open();
         TriggerDialogue();
-        //PickUp();
+        PickUp();
     }
     void Open(){
         anime=GetComponent<Animator>();
@@ -24,7 +24,8 @@ public class ChestOpen : Interactable
             anime.SetBool("IsOpened",false);
         if(wasPickedUp==true)
             anime.SetBool("ItemTaken",true);
-            Destroy(gameObject);
+            Destroy(gameObject,1);
+            Destroy(this);
 
     }
     

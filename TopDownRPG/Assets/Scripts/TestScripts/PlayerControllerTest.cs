@@ -53,6 +53,7 @@ public class PlayerControllerTest : MonoBehaviour
             
     }
     void RemoveFoucs(){
+        FindObjectOfType<DialogueManager>().EndDialogue();
         if(focus!=null)
         focus.OnDefocused();
         focus=null;
