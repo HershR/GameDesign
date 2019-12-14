@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     #region Singleton
     public static Inventory instance;
+
     void Awake(){
         if(instance!=null){
             Debug.LogWarning("More than one instance of inventory found");
@@ -14,16 +15,17 @@ public class Inventory : MonoBehaviour
         instance=this;
     }
     #endregion
-
+    public Dialogue dialogue;
+    string tempSentence;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
     public List<Item> items=new List<Item>();
     public int space=20;
-    
+
     public bool Add(Item item){
         if(!item.isDefaultItem){
             if(items.Count>=space){
-                Debug.Log("Not enough Inventory space");
+                TriggerDialogue();
                 return false;
             }
             items.Add(item);
@@ -32,6 +34,11 @@ public class Inventory : MonoBehaviour
         }
          return true;
     }
+    public void TriggerDialogue(){
+        
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        
+   }
     public void Remove(Item item){
 
         items.Remove(item);

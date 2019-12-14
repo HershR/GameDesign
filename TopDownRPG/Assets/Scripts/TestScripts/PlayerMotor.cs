@@ -29,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
         target=newTarget.interactionTransform;
         agent.stoppingDistance=newTarget.radius*0.8f;
         agent.updateRotation=false;
-        Debug.Log(newTarget.radius);
+        //Debug.Log(newTarget.radius);
     }
     public void StopFollowingTarget(){
         agent.stoppingDistance=0.0f;

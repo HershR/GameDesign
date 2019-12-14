@@ -5,5 +5,6 @@ using UnityEngine;
 public class Dialogue
 {
     public string name;
-    public string[] sentences;
+    public string[] sentences=new string[1];
+    
 }
