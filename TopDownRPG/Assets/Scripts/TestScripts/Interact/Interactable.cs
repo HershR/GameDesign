@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
     Transform player;
     private DialogueManager ConverationTrig;
     public Transform interactionTransform;
-
+    public Dialogue dialogue;
     public virtual void Interact()
     {
             //This method is meant to be overwritten
@@ -43,5 +43,8 @@ public class Interactable : MonoBehaviour
         Gizmos.color=Color.yellow;
         Gizmos.DrawWireSphere(interactionTransform.position,radius);
 
+    }
+    public void TriggerConversation(){
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }
