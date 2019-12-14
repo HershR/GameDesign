@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WoodenShield
   m_EditorClassIdentifier: 
   name: Wooden Shield
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4bed45f5e1fb86a43b59e71876fe867b, type: 3}
   isDefaultItem: 0
   dialogue:
     name: 
