@@ -1,7 +1,7 @@
 ﻿using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class PlayerControllerTest : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     PlayerMotor motor;
     Camera cam;
