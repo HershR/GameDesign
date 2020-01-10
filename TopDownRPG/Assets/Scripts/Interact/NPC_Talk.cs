@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NPC_Talk : Interactable
 {
-    //public Dialogue dialogue;
-    public override void Interact(){
+        public override void Interact(){
         base.Interact();
+        FaceTarget();
         TriggerConversation();
         
     }

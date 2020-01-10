@@ -8,7 +8,14 @@ public class Door : Interactable
     //public Dialogue dialogue;
     public override void Interact(){
         base.Interact();
-        if((Inventory.instance.items).Contains(key)){
+        if(key!=null){
+            if((Inventory.instance.items).Contains(key)){
+                Open();
+            }else{
+                TriggerConversation();
+            }
+        }else
+        {
             Open();
         }
         
