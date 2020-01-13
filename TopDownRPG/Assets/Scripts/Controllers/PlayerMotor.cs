@@ -27,7 +27,7 @@ public class PlayerMotor : MonoBehaviour
     public void FollowTarget(Interactable newTarget){
         
         target=newTarget.interactionTransform;
-        agent.stoppingDistance=newTarget.radius*0.8f;
+        agent.stoppingDistance=newTarget.radius;
         agent.updateRotation=false;
         //Debug.Log(newTarget.radius);
     }
@@ -39,6 +39,6 @@ public class PlayerMotor : MonoBehaviour
     void FaceTarget(){
         Vector3 direction=(target.position-transform.position).normalized;
         Quaternion lookRotation=Quaternion.LookRotation(new Vector3(direction.x,0f,direction.z));
-        transform.rotation=Quaternion.Slerp(transform.rotation,lookRotation,Time.deltaTime*5f);
+        transform.rotation=Quaternion.Slerp(transform.rotation,lookRotation,1f);
     }
 }

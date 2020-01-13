@@ -36,14 +36,7 @@ public class Interactable : MonoBehaviour
         player=null;
         hasInteracted=false;
     }
-    void OnDrawGizmosSelected(){
-        if(interactionTransform==null)
-            interactionTransform=transform;
 
-        Gizmos.color=Color.yellow;
-        Gizmos.DrawWireSphere(interactionTransform.position,radius);
-
-    }
     public void TriggerConversation(){
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
@@ -51,5 +44,11 @@ public class Interactable : MonoBehaviour
         Vector3 direction= (player.position-transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
         transform.rotation=Quaternion.Slerp(transform.rotation,lookRotation,1.0f);
+    }
+    void OnDrawGizmosSelected(){
+        if(interactionTransform==null)
+            interactionTransform=transform;
+        Gizmos.color=Color.yellow;
+        Gizmos.DrawWireSphere(interactionTransform.position,radius);
     }
 }
