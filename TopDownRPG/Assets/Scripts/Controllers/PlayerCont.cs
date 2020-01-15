@@ -18,10 +18,10 @@ public class PlayerCont : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, 0.0f, Input.GetAxis("Vertical") * speed);
-        moveDirection.y = (moveDirection.y + Physics.gravity.y);
-        controller.Move(moveDirection * Time.deltaTime);
-
+        if(Input.GetKey(KeyCode.UpArrow)||Input.GetKey(KeyCode.DownArrow)||Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)){    
+            moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, 0.0f, Input.GetAxis("Vertical") * speed);
+            moveDirection.y = (moveDirection.y + Physics.gravity.y);
+            controller.Move(moveDirection * Time.deltaTime);
+        }
     }
 }

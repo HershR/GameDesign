@@ -27,7 +27,7 @@ public class PlayerMotor : MonoBehaviour
     public void FollowTarget(Interactable newTarget){
         
         target=newTarget.interactionTransform;
-        agent.stoppingDistance=newTarget.radius;
+        agent.stoppingDistance=newTarget.radius*1.0f;
         agent.updateRotation=false;
         //Debug.Log(newTarget.radius);
     }
