@@ -9,7 +9,7 @@ public class PlayerCont : MonoBehaviour
     private Vector3 moveDirection;
     public LayerMask InteractMask;
     public Transform origin;
-    public Interactable2 focus;
+    public Interactable focus;
     public float Range;
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,14 @@ public class PlayerCont : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = (transform.forward*Input.GetAxis("Vertical"))+(transform.right*Input.GetAxis("Horizontal"));
-        moveDirection=moveDirection.normalized*speed;
-        moveDirection.y = (moveDirection.y + Physics.gravity.y);
-        controller.Move(moveDirection * Time.deltaTime);
+        
 
         //
         RaycastHit hit;
         if(Physics.Raycast(origin.transform.position,transform.TransformDirection(Vector3.forward),out hit,Range,InteractMask)){
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             //Debug.Log("Did Hit");
-            Interactable2 interactable=hit.collider.GetComponent<Interactable2>();
+            Interactable interactable=hit.collider.GetComponent<Interactable>();
                 if(interactable!=null){
                     if(Input.GetKeyDown(interactable.InteractKey)){
                         SetFocus(interactable);
@@ -43,9 +40,20 @@ public class PlayerCont : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * Range, Color.white);
             //Debug.Log("Did not Hit");
-        } 
+        }
+        
+            if(focus==null){
+                //if (Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)||Input.GetKey(KeyCode.UpArrow)||Input.GetKey(KeyCode.DownArrow)) {     
+                    moveDirection = (transform.forward*Input.GetAxis("Vertical"))+(transform.right*Input.GetAxis("Horizontal"));
+                    moveDirection=moveDirection.normalized*speed;
+                    moveDirection.y = (moveDirection.y + Physics.gravity.y);
+                    controller.Move(moveDirection * Time.deltaTime); 
+                //}
+            }else if(focus.hasInteracted==true){
+                RemoveFoucs();
+            }
     }
-    void SetFocus(Interactable2 newFocus){
+    void SetFocus(Interactable newFocus){
         if(newFocus!=focus){
             if(focus!=null)
                 focus.OnDefocused();

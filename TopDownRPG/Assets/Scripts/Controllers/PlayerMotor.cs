@@ -8,9 +8,10 @@ public class PlayerMotor : MonoBehaviour
 {
     NavMeshAgent agent;
     Transform target;
-    
+    private Animator anime;
     void Start()
     {
+        anime=this.gameObject.transform.GetChild(0).GetComponent<Animator>();
         agent=GetComponent<NavMeshAgent>();
     }
     void Update(){
@@ -25,16 +26,18 @@ public class PlayerMotor : MonoBehaviour
         agent.SetDestination(point);
     }
     public void FollowTarget(Interactable newTarget){
-        
+        anime.SetFloat("speed",1.0f);
         target=newTarget.interactionTransform;
         agent.stoppingDistance=newTarget.radius*1.0f;
         agent.updateRotation=false;
+        
         //Debug.Log(newTarget.radius);
     }
     public void StopFollowingTarget(){
         agent.stoppingDistance=0.0f;
         agent.updateRotation=true;
         target=null;
+        anime.SetFloat("speed",0.0f);
     }
     void FaceTarget(){
         Vector3 direction=(target.position-transform.position).normalized;

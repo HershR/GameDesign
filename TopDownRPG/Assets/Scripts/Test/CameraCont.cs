@@ -9,9 +9,12 @@ public class CameraCont : MonoBehaviour
     public bool useOffsetValue;
     public float rotateSpeed;
     public Transform piviot;
+    private PlayerCont player;
+    
     // Start is called before the first frame update
     void Start()
     {
+        player= PlayerManager.instance.player.GetComponent<PlayerCont>();
         if(!useOffsetValue){
             offset=target.position-transform.position;
         }
@@ -23,9 +26,10 @@ public class CameraCont : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player.focus==null){
         float horizontal = Input.GetAxis("Mouse X")*rotateSpeed;
         target.Rotate(0,horizontal,0);
-
+        }
         float desiredYAngle =target.eulerAngles.y;
         Quaternion rotation=Quaternion.Euler(0,desiredYAngle,0);
         transform.position=target.position-(rotation*offset);
