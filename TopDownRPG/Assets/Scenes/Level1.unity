@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4627,6 +4627,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 5021462328011692094, guid: f78ac9735696347b7baf3d3cca7fa60a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f78ac9735696347b7baf3d3cca7fa60a, type: 3}
 --- !u!1001 &5117131230862795845
@@ -4654,7 +4659,7 @@ PrefabInstance:
     - target: {fileID: 5117131231038316891, guid: f8ffc0024371f41a392670731962306e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.74
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 5117131231038316891, guid: f8ffc0024371f41a392670731962306e,
         type: 3}
@@ -4716,6 +4721,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3c70d4ba1eff9b4459eea4cb40ba5055, type: 2}
+    - target: {fileID: 7073404725088331275, guid: f8ffc0024371f41a392670731962306e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 663834164c6a04740aaa1b778249ce7e, type: 2}
+    - target: {fileID: 7073404725088331273, guid: f8ffc0024371f41a392670731962306e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17c44fb3e5be9644586a0728a5f5a386, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ffc0024371f41a392670731962306e, type: 3}
 --- !u!1001 &5440806996102704713

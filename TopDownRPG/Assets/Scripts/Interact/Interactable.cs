@@ -12,12 +12,11 @@ public class Interactable : MonoBehaviour
     public Dialogue dialogue;
     public GameObject FloatingTextPrefab;
     public string InteractKey="f";
-    public virtual void Interact()
+   
+   public virtual void Interact()
     {
             //This method is meant to be overwritten
-            Debug.Log("Interact");
-            //
-
+        Debug.Log("Interact");
     }
     void Update(){
         if(isFocus==true&&hasInteracted==false){
