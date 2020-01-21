@@ -8,6 +8,7 @@ public class PlayerMotor : MonoBehaviour
 {
     NavMeshAgent agent;
     Transform target;
+    Interactable interact;
     private Animator anime;
     void Start()
     {
@@ -18,26 +19,39 @@ public class PlayerMotor : MonoBehaviour
         if(target!=null){
             agent.SetDestination(target.position);
             FaceTarget();
+            if (Vector3.Distance(transform.position, agent.destination) <= interact.radius+0.2f)
+            {
+                anime.SetBool("moving",false);
+            }
+        }else{
+            if (Vector3.Distance(transform.position, agent.destination) <= 0.50f)
+            {
+                anime.SetBool("moving",false);
+            }
         }
     }
     // Update is called once per frame
     public void MoveToPoint(Vector3 point)
     {
+        anime.SetBool("moving",true);
         agent.SetDestination(point);
+        
     }
     public void FollowTarget(Interactable newTarget){
-        anime.SetFloat("speed",1.0f);
+        anime.SetBool("moving",true);
+        interact=newTarget;
         target=newTarget.interactionTransform;
-        agent.stoppingDistance=newTarget.radius*1.0f;
+        agent.stoppingDistance=newTarget.radius*0.8f;
         agent.updateRotation=false;
         
         //Debug.Log(newTarget.radius);
     }
     public void StopFollowingTarget(){
+        //anime.SetBool("moving",false);
         agent.stoppingDistance=0.0f;
         agent.updateRotation=true;
         target=null;
-        anime.SetFloat("speed",0.0f);
+        
     }
     void FaceTarget(){
         Vector3 direction=(target.position-transform.position).normalized;

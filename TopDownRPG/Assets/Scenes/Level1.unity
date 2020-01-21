@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5965e86d8341363488a27f667e1be56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 3
   hasInteracted: 0
   interactionTransform: {fileID: 954476267}
   dialogue:
@@ -2805,6 +2805,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1659975807}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1119823030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5117131231038316893, guid: f8ffc0024371f41a392670731962306e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5117131230862795845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1119823031
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119823030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c70d4ba1eff9b4459eea4cb40ba5055, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1203197428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3611,7 +3636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5965e86d8341363488a27f667e1be56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 3
   hasInteracted: 0
   interactionTransform: {fileID: 1710382892}
   dialogue:
@@ -4324,6 +4349,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 890320350}
+    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 464284511}
+    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 699457795}
     - target: {fileID: 5856797691469544951, guid: a49377f66f27ea64b9bb4cec63f02dc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4379,21 +4419,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 890320350}
-    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 464284511}
-    - target: {fileID: 5856797691469544950, guid: a49377f66f27ea64b9bb4cec63f02dc3,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 699457795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49377f66f27ea64b9bb4cec63f02dc3, type: 3}
 --- !u!1001 &3702124885086380855
@@ -4462,6 +4487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702124883536475794, guid: 88fa66879e57744138a25607e1d51120,
+        type: 3}
+      propertyPath: radius
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88fa66879e57744138a25607e1d51120, type: 3}
@@ -4669,13 +4699,23 @@ PrefabInstance:
     - target: {fileID: 6827556139355189493, guid: f8ffc0024371f41a392670731962306e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5117131230523635449, guid: f8ffc0024371f41a392670731962306e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7073404725091284777, guid: f8ffc0024371f41a392670731962306e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.363
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073404725084051659, guid: f8ffc0024371f41a392670731962306e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3c70d4ba1eff9b4459eea4cb40ba5055, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ffc0024371f41a392670731962306e, type: 3}
 --- !u!1001 &5440806996102704713

@@ -8,13 +8,12 @@ public class PlayerController : MonoBehaviour
 
     public Interactable focus;
     public LayerMask movementMask;
-    
-    
+    private Animator anime;
     void Start()
-    {
-        
+    {  
         motor=GetComponent<PlayerMotor>();
         cam=Camera.main;
+        anime=this.gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +25,7 @@ public class PlayerController : MonoBehaviour
             Ray ray=cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit,100,movementMask)){
+                
                 motor.MoveToPoint(hit.point);
                 RemoveFoucs();
             }
