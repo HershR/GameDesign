@@ -132,7 +132,12 @@ ModelImporter:
     13700000: Character
     13700002: Hair
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: e916df5f38b16bd42a9f139f62a0b6b9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
