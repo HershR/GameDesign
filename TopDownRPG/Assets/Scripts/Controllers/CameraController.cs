@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.A)) { 
             currentYaw -=Input.GetAxis("Horizontal")*yawSpeed*Time.deltaTime;
         }
+        
     }
     void LateUpdate(){
         transform.position=target.position-offset*currentZoom;
