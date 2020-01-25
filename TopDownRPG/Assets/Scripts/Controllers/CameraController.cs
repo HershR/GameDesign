@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
     public float currentZoom=10.0f;
     public float currentYaw=0.0f;
     public float defaultZoom=10.0f;
+
+    public LayerMask environmentMask; 
     
     
     void Update(){
@@ -37,24 +39,16 @@ public class CameraController : MonoBehaviour
     }
     void Reposition(){
         RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.white);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 2.0f, Color.white);
+        
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,Mathf.Infinity)){
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.white);
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 2.0f, Color.white);
+            
             if(hit.collider.tag!="Player"){
                 currentZoom=currentZoom-0.50f;
-                Debug.Log("ZoomOut");
-            }else if(hit.collider.tag=="Player"){
-                Debug.Log("Player Hit");
-                if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.back),out hit,2.0f)){
-                    //If not null
-                    Debug.Log("BackRay:hit");
-                }else{
-                    //if null
-                    currentZoom=currentZoom+0.02f;
-                    Debug.Log("BackRay:null");
-                }              
-            }
+                //Debug.Log("ObjectHit");
+            }   
         }
-        
+            //Debug.Log(hit.collider.name);
     }
 }

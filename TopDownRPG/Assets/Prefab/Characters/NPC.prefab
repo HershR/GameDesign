@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3702124883536475792}
-  - component: {fileID: 3702124883536475793}
   - component: {fileID: 3702124883536475794}
+  - component: {fileID: 1301236956832923172}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -34,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3702124883536475793
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3702124883536475795}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &3702124883536475794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
+  hasInteracted: 0
   interactionTransform: {fileID: 3702124883536475792}
   dialogue:
     name: 
@@ -69,6 +56,19 @@ MonoBehaviour:
   FloatingTextPrefab: {fileID: 2871859570716949492, guid: 2f67956e1d82f1542a265f2190313398,
     type: 3}
   InteractKey: f
+--- !u!65 &1301236956832923172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702124883536475795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5103152, z: 1}
+  m_Center: {x: 0, y: -0.40488613, z: 0}
 --- !u!1 &3702124883629269489
 GameObject:
   m_ObjectHideFlags: 0

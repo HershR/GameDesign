@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPC_Talk : Interactable
 {
-        public override void Interact(){
+    public override void Interact(){
         base.Interact();
         Debug.Log("PLayer has interacted");
         FaceTarget();
