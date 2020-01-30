@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     public Transform interactionTransform;
     public Dialogue dialogue;
     public GameObject FloatingTextPrefab;
-    public string InteractKey="f";
+    //public string InteractKey="f";
    
    public virtual void Interact()
     {

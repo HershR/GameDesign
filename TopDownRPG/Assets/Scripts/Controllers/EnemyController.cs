@@ -5,9 +5,12 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRaduis=10f;
+    public float lookRadius=10f;
+    public float fov=45f;
+    private float angleToPlayer;
     Transform target;
     NavMeshAgent agent;
+    bool IsChasing =false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +23,20 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         float distance= Vector3.Distance(target.position,transform.position);
-        if(distance<=lookRaduis){
+        angleToPlayer=Vector3.Angle(target.position-transform.position,transform.forward);
+        if(distance<=lookRadius&&angleToPlayer<=fov){
             agent.SetDestination(target.position);
-
-            if(distance<=agent.stoppingDistance){
-                FaceTarget();
-            }
+            FaceTarget();
+            IsChasing=true;
+        }else{
+            agent.isStopped=true;
+            agent.ResetPath();
         }
-        
+        if(IsChasing==true){
+                lookRadius=5.0f;
+            }else{
+                lookRadius=2.0f;
+            }
     }
     void FaceTarget(){
         Vector3 direction= (target.position-transform.position).normalized;
@@ -36,6 +45,6 @@ public class EnemyController : MonoBehaviour
     }
     void OnDrawGizmosSelected(){
         Gizmos.color=Color.red;
-        Gizmos.DrawWireSphere(transform.position,lookRaduis);
+        Gizmos.DrawWireSphere(transform.position,lookRadius);
     }
 }

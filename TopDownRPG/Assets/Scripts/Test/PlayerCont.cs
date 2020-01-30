@@ -21,7 +21,7 @@ public class PlayerCont : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         RaycastHit hit;
         if(Physics.Raycast(origin.transform.position,transform.TransformDirection(Vector3.forward),out hit,Range,InteractMask)){
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
@@ -48,7 +48,7 @@ public class PlayerCont : MonoBehaviour
                 //}
             }else if(focus.hasInteracted==true){
                 RemoveFoucs();
-            }
+            }*/
     }
     void SetFocus(Interactable newFocus){
         if(newFocus!=focus){

@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRaduis: 2
+  fov: 45
 --- !u!195 &5440806994732759579
 NavMeshAgent:
   m_ObjectHideFlags: 0
