@@ -3,7 +3,6 @@
 public class ItemPickUp : Interactable
 {
     public Item item;
-    //public Dialogue dialogue;
     public override void Interact(){
         base.Interact();
         PickUp();

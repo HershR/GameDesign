@@ -8,12 +8,11 @@ public class PlayerController : MonoBehaviour
 
     public Interactable focus;
     public LayerMask movementMask;
-    private Animator anime;
+    
     void Start()
     {  
         motor=GetComponent<PlayerMotor>();
         cam=Camera.main;
-        anime=this.gameObject.transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame

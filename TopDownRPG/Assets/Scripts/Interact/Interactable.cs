@@ -11,11 +11,10 @@ public class Interactable : MonoBehaviour
     public Transform interactionTransform;
     public Dialogue dialogue;
     public GameObject FloatingTextPrefab;
-    //public string InteractKey="f";
+    public bool isItem;
    
    public virtual void Interact()
     {
-        
         Debug.Log("Interact");
     }
     void Start(){
@@ -60,6 +59,9 @@ public class Interactable : MonoBehaviour
         Vector3 direction= (player.position-transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
         transform.rotation=Quaternion.Slerp(transform.rotation,lookRotation,1.0f);
+    }
+    public float heightDifference(){
+        return player.position.y-interactionTransform.position.y;
     }
     void OnDrawGizmosSelected(){
         if(interactionTransform==null)

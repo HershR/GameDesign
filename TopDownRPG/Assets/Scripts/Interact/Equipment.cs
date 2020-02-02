@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 public class Equipment : Item {
 	public EquipmentSlot equipSlot;	// Slot to store equipment in
-
+	//public SkinnedMeshRender meshRender;
 	public int armorModifier;		// Increase/decrease in armor
 	public int damageModifier;      // Increase/decrease in damage
 	// When pressed in inventory
