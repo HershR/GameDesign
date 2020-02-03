@@ -119,11 +119,11 @@ ModelImporter:
     2100002: Skin
     4300000: Hair
     4300002: Body
-    7400000: metarig|Idel
-    7400002: metarig|PickUp
-    7400004: metarig|PickUp_ground
-    7400006: metarig|T-pose
-    7400008: metarig|Walk
+    7400000: Idel
+    7400002: PickUp
+    7400004: PickUp_ground
+    7400006: T-pose
+    7400008: Walk
     9500000: //RootNode
     13700000: Body
     13700002: Hair
@@ -161,7 +161,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|Idel
+      name: Idel
       takeName: metarig|Idel
       firstFrame: 0
       lastFrame: 23
@@ -189,7 +189,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|PickUp
+      name: PickUp
       takeName: metarig|PickUp
       firstFrame: 0
       lastFrame: 27
@@ -217,7 +217,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|PickUp_ground
+      name: PickUp_ground
       takeName: metarig|PickUp_ground
       firstFrame: 0
       lastFrame: 23
@@ -245,7 +245,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|T-pose
+      name: T-pose
       takeName: metarig|T-pose
       firstFrame: 0
       lastFrame: 1
@@ -273,7 +273,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|Walk
+      name: Walk
       takeName: metarig|Walk
       firstFrame: 0
       lastFrame: 24

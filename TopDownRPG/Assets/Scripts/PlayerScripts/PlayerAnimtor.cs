@@ -11,6 +11,7 @@ public class PlayerAnimtor : MonoBehaviour
     PlayerMotor motor;
     PlayerController player;
     private float time;
+    string condition;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,17 @@ public class PlayerAnimtor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float speed=agent.velocity.magnitude/agent.speed;
         animator.SetFloat("speed",speed,locomationAnimationSmoothTime,Time.deltaTime);
+        if(player.focus!=null){
+           condition= player.focus.animationCondition;
+            if(Vector3.Distance(player.transform.position,player.focus.transform.position)<=player.focus.radius){
+                animator.SetBool(condition,true);
+            }
+        }else{
+            //animator.SetBool(condition,false);
+            condition="";
+        }
     }
 }

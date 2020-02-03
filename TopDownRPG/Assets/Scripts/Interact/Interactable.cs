@@ -11,7 +11,9 @@ public class Interactable : MonoBehaviour
     public Transform interactionTransform;
     public Dialogue dialogue;
     public GameObject FloatingTextPrefab;
-    public bool isItem;
+    public string animationCondition;
+    [HideInInspector]
+    public Animator playerAnime;
    
    public virtual void Interact()
     {
@@ -19,6 +21,7 @@ public class Interactable : MonoBehaviour
     }
     void Start(){
         dialogueManager=FindObjectOfType<DialogueManager>();
+        playerAnime=PlayerManager.instance.player.GetComponent<Animator>();
     }
     void Update(){
         if(isFocus==true&&hasInteracted==false){
