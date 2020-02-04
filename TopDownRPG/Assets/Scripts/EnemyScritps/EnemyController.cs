@@ -8,14 +8,16 @@ public class EnemyController : MonoBehaviour
     public float lookRadius=10f;
     public float fov=45f;
     private float angleToPlayer;
+
     Transform target;
     NavMeshAgent agent;
-    bool IsChasing =false;
+    CharacterCombat combat;
     // Start is called before the first frame update
     void Start()
     {
         target=PlayerManager.instance.player.transform;
         agent=GetComponent<NavMeshAgent>();
+        combat=GetComponent<CharacterCombat>();
         
     }
 
@@ -27,16 +29,16 @@ public class EnemyController : MonoBehaviour
         if(distance<=lookRadius&&angleToPlayer<=fov){
             agent.SetDestination(target.position);
             FaceTarget();
-            IsChasing=true;
+            if(distance<=agent.stoppingDistance){
+               CharacterStats targetStats= target.GetComponent<CharacterStats>();
+               if(targetStats!=null){
+                    combat.Attack(targetStats);
+                }
+            }
         }else{
             agent.isStopped=true;
             agent.ResetPath();
         }
-        if(IsChasing==true){
-                lookRadius=5.0f;
-            }else{
-                lookRadius=2.0f;
-            }
     }
     void FaceTarget(){
         Vector3 direction= (target.position-transform.position).normalized;

@@ -20,5 +20,5 @@ MonoBehaviour:
     sentences:
     - You found a Flame Sword
   equipSlot: 3
-  armorModifier: 0
-  damageModifier: 0
+  armorModifier: 2
+  damageModifier: 2
