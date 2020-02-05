@@ -8,14 +8,12 @@ public class PlayerAnimtor : MonoBehaviour
     const float locomationAnimationSmoothTime=.1f;
     NavMeshAgent agent;
     Animator animator;
-    PlayerMotor motor;
     PlayerController player;
     private float time;
     string condition;
     // Start is called before the first frame update
     void Start()
     {
-        motor=GetComponent<PlayerMotor>();
         agent=GetComponent<NavMeshAgent>();
         animator=GetComponent<Animator>();
         player=GetComponent<PlayerController>();
