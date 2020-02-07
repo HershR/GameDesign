@@ -25,14 +25,17 @@ public class PlayerAnimtor : MonoBehaviour
         
         float speed=agent.velocity.magnitude/agent.speed;
         animator.SetFloat("speed",speed,locomationAnimationSmoothTime,Time.deltaTime);
-        if(player.focus!=null&&player.focus.animationCondition!=null){
-           condition= player.focus.animationCondition;
-            if(Vector3.Distance(player.transform.position,player.focus.transform.position)<=player.focus.radius){
-                animator.SetBool(condition,true);
+        if(player.focus!=null){
+            if(!string.IsNullOrEmpty(player.focus.animationCondition)){
+                condition= player.focus.animationCondition;
+                if(Vector3.Distance(player.transform.position,player.focus.transform.position)<=player.focus.radius){
+                    animator.SetBool(condition,true);
+                }
             }
+
         }else{
-            animator.SetBool(condition,false);
-            condition="";
-        }
+                animator.SetBool(condition,false);
+                condition="";
+            }
     }
 }
