@@ -84,7 +84,7 @@ Animator:
   m_GameObject: {fileID: 5440806994732759576}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c56a0539573084ebe94e377b4405af47, type: 3}
-  m_Controller: {fileID: 9100000, guid: a18836c853028467189dd7c0fd0592c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3c70d4ba1eff9b4459eea4cb40ba5055, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -105,6 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe8fb8c8f2764c019bfa0dad2fa6e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  replaceableAttackAnim: {fileID: 7400016, guid: 856b5b867fc8b4bf695a7de8bbfa9e89,
+    type: 3}
+  defaultAttackAnimSet:
+  - {fileID: 7400010, guid: c56a0539573084ebe94e377b4405af47, type: 3}
 --- !u!114 &5440806994732759578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7803adccba4694bce860d021bbb4e526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  replaceableAttackAnim: {fileID: 0}
+  defaultAttackAnimSet: []
   lookRadius: 10
   fov: 45
 --- !u!114 &8831537823814042203
@@ -131,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50fb4ecef167332419d712526201216b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 1.37
   hasInteracted: 0
   interactionTransform: {fileID: 5440806994732759580}
   dialogue:
@@ -153,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be2a1e36ef6ca44b9321a24ffb0c8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 100000
   damage:
     baseValue: 1
   armor:
@@ -170,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf277ab96640d7b4880c72dd281abc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
-  attackDelay: 0.6
+  attackSpeed: 1.5
+  attackDelay: 1
 --- !u!1001 &3119163006948214238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +261,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: c56a0539573084ebe94e377b4405af47, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3c70d4ba1eff9b4459eea4cb40ba5055, type: 2}
     - target: {fileID: 100054, guid: c56a0539573084ebe94e377b4405af47, type: 3}
       propertyPath: m_Layer
       value: 9

@@ -62,6 +62,7 @@ ModelImporter:
     100112: toe.R_end
     100114: upper_arm.L
     100116: upper_arm.R
+    100118: Baton
     400000: Badge
     400002: elbowIK.L
     400004: elbowIK.L_end
@@ -121,24 +122,33 @@ ModelImporter:
     400112: toe.R_end
     400114: upper_arm.L
     400116: upper_arm.R
+    400118: Baton
     2100000: Skin
     2100002: Pant
     2100004: Shoes
     2100006: Badge
+    2100008: Baton
     4300000: Shirt
     4300002: Pants
     4300004: Shoes
     4300006: Badge
     4300008: Hat
+    4300010: Baton
     7400000: Enemy_Idel
     7400002: Enemy_T-pose
     7400004: Enemy_Walk
+    7400006: Enemy_Attack
+    7400008: Walk
+    7400010: EnemyAttack_Basic
+    7400012: EnemyAttack_Idel
     9500000: //RootNode
     13700000: Badge
     13700002: Hat
     13700004: Pants
     13700006: Shirt
     13700008: Shoes
+    13700010: Baton
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -238,6 +248,62 @@ ModelImporter:
       takeName: metarig|Walk
       firstFrame: 0
       lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: EnemyAttack_Basic
+      takeName: metarig|Attack_Basic
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: EnemyAttack_Idel
+      takeName: metarig|Attack_Idel
+      firstFrame: 0
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

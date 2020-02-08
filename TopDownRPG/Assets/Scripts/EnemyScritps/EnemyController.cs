@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : CharacterAnimator
 {
     public float lookRadius=10f;
     public float fov=45f;
@@ -13,8 +13,9 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     CharacterCombat combat;
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
+        base.Start();
         target=PlayerManager.instance.player.transform;
         agent=GetComponent<NavMeshAgent>();
         combat=GetComponent<CharacterCombat>();
@@ -22,8 +23,9 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
+        base.Update();
         float distance= Vector3.Distance(target.position,transform.position);
         angleToPlayer=Vector3.Angle(target.position-transform.position,transform.forward);
         if(distance<=lookRadius&&angleToPlayer<=fov){

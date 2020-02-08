@@ -4,12 +4,12 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public int maxHealth =100;
-    public int currerntHealth{get;private set; }
+    public int currentHealth{get;private set; }
     public Stat damage;
     public Stat armor;
 
     void Awake(){
-        currerntHealth=maxHealth;
+        currentHealth=maxHealth;
     }
     void Update(){
         if(Input.GetKeyDown(KeyCode.T)){
@@ -20,16 +20,16 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamage(int damage){
         damage-=armor.GetValue();
         damage=Mathf.Clamp(damage,0,int.MaxValue);
-        currerntHealth-=damage;
+        currentHealth-=damage;
         Debug.Log(transform.name+" takes "+ damage+" damage.");
-        if(currerntHealth<=0){
+        if(currentHealth<=0){
             Die();
         }
     }
     public virtual void Die(){
         //Die in someway
         //ment to be overridden
-        Debug.Log(transform.name+" died.");
+        //Debug.Log(transform.name+" died.");
     }
 
 }
