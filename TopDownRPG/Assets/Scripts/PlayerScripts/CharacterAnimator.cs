@@ -18,7 +18,7 @@ public class CharacterAnimator : MonoBehaviour
     protected virtual void Start()
     {
         agent=GetComponent<NavMeshAgent>();
-        animator=GetComponent<Animator>();
+        animator=GetComponentInChildren<Animator>();
         combat=GetComponent<CharacterCombat>();
         if(overrideController==null){
             overrideController= new AnimatorOverrideController(animator.runtimeAnimatorController);
@@ -34,6 +34,7 @@ public class CharacterAnimator : MonoBehaviour
     protected virtual void Update()
     {
         float speed=agent.velocity.magnitude/agent.speed;
+        Debug.Log(speed);
         animator.SetFloat("speed",speed,locomationAnimationSmoothTime,Time.deltaTime);
         animator.SetBool("InCombat",combat.InCombat);
     }
