@@ -12,12 +12,16 @@ public class EnemyController : MonoBehaviour
     Transform target;
     NavMeshAgent agent;
     CharacterCombat combat;
+    EnemyStats stats;
+    float health;
     // Start is called before the first frame update
      void Start()
     {
         target=PlayerManager.instance.player.transform;
         agent=GetComponent<NavMeshAgent>();
         combat=GetComponent<CharacterCombat>();
+        stats=GetComponent<EnemyStats>();
+        health=stats.currentHealth;
         
     }
 

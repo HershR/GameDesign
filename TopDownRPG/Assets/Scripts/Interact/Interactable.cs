@@ -10,10 +10,8 @@ public class Interactable : MonoBehaviour
     private DialogueManager dialogueManager;
     public Transform interactionTransform;
     public Dialogue dialogue;
-    public GameObject FloatingTextPrefab;
-    public string animationCondition;
     [HideInInspector]
-    public Animator playerAnime;
+    protected Animator playerAnime;
    
    public virtual void Interact()
     {
@@ -21,13 +19,12 @@ public class Interactable : MonoBehaviour
     }
     void Start(){
         dialogueManager=FindObjectOfType<DialogueManager>();
-        playerAnime=PlayerManager.instance.player.GetComponent<Animator>();
+        playerAnime=PlayerManager.instance.player.GetComponentInChildren<Animator>();;
     }
     void Update(){
         if(isFocus==true&&hasInteracted==false){
             float distance=Vector3.Distance(player.position,interactionTransform.position);
             if(distance<=radius){
-                //showFloatingText();
                 //TriggerConversation();
                 Interact();
                 
@@ -46,14 +43,6 @@ public class Interactable : MonoBehaviour
         isFocus=false;
         player=null;
         hasInteracted=false;
-    }
-    public void showFloatingText(){
-        if(FloatingTextPrefab!=null){
-            Instantiate(FloatingTextPrefab,interactionTransform.position,Quaternion.identity,interactionTransform);
-        }
-    }
-    public void closeFloatingText(){
-           // Destroy(FloatingTextPrefab);
     }
     public void TriggerConversation(){
         dialogueManager.StartDialogue(dialogue);

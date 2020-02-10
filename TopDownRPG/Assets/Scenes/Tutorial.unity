@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,9 +180,6 @@ MonoBehaviour:
     name: Sign
     sentences:
     - Welcome to the Game
-  FloatingTextPrefab: {fileID: 0}
-  animationCondition: 
-  playerAnime: {fileID: 0}
 --- !u!1 &248685549
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,9 +219,6 @@ MonoBehaviour:
     name: 
     sentences:
     - 
-  FloatingTextPrefab: {fileID: 0}
-  animationCondition: IsItem
-  playerAnime: {fileID: 0}
   item: {fileID: 11400000, guid: 25ac309ccb5bb4e51a65ef81c950e876, type: 2}
 --- !u!65 &248685551
 BoxCollider:
@@ -384,6 +378,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
       value: My name is JJJJJ
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702124883536475794, guid: 88fa66879e57744138a25607e1d51120,
+        type: 3}
+      propertyPath: radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3702124884913028180, guid: 88fa66879e57744138a25607e1d51120,
         type: 3}
@@ -745,6 +744,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5264607159376193759, guid: f8ffc0024371f41a392670731962306e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.82
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ffc0024371f41a392670731962306e, type: 3}
 --- !u!114 &503560762 stripped
@@ -1100,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279314119, guid: aa3a2f650ac614956b0f15995e5b0945, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.025182344
+      value: 0.025182346
       objectReference: {fileID: 0}
     - target: {fileID: 279314119, guid: aa3a2f650ac614956b0f15995e5b0945, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1136,11 +1140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542094730, guid: aa3a2f650ac614956b0f15995e5b0945, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0003002051
+      value: 0.00030024434
       objectReference: {fileID: 0}
     - target: {fileID: 1542094730, guid: aa3a2f650ac614956b0f15995e5b0945, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.01656641
+      value: 0.016566405
       objectReference: {fileID: 0}
     - target: {fileID: 1542094730, guid: aa3a2f650ac614956b0f15995e5b0945, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1383,7 +1387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871177800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -1.26, z: 0.03}
+  m_LocalPosition: {x: -0.45, y: -1.26, z: -0.152}
   m_LocalScale: {x: 1.8740981, y: 1.8740981, z: 1.8740981}
   m_Children: []
   m_Father: {fileID: 72662125}
@@ -1632,9 +1636,6 @@ MonoBehaviour:
     name: 
     sentences:
     - 
-  FloatingTextPrefab: {fileID: 0}
-  animationCondition: IsItem
-  playerAnime: {fileID: 0}
   item: {fileID: 11400000, guid: 11a6eaaba2f05f94aa36dcae1373f820, type: 2}
 --- !u!65 &916193373
 BoxCollider:
@@ -2316,9 +2317,6 @@ MonoBehaviour:
     name: 
     sentences:
     - 
-  FloatingTextPrefab: {fileID: 0}
-  animationCondition: IsItem
-  playerAnime: {fileID: 0}
   item: {fileID: 11400000, guid: 25ac309ccb5bb4e51a65ef81c950e876, type: 2}
 --- !u!65 &1313415743
 BoxCollider:

@@ -17,6 +17,7 @@ public class ItemPickUp : Interactable
         if(wasPickedUp==true){
             
             item.TriggerDialogue();
+            playerAnime.SetTrigger("itemPickup");
             Destroy(gameObject,1.0f);
         }
     }

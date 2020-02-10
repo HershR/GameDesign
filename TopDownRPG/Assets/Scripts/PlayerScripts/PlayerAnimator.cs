@@ -18,12 +18,5 @@ public class PlayerAnimator : CharacterAnimator
      void  Update()
     {
         base.Update();
-        if(player.focus!=null&& player.focus.tag=="Item"){
-            if(Vector3.Distance(player.transform.position,player.focus.transform.position)<=player.focus.radius){
-                    animator.SetBool("IsItem",true);
-            }
-        }else{
-            animator.SetBool("IsItem",false);
-        }
     }
 }

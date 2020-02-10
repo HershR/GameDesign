@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterCombat : MonoBehaviour
 {
-    	public float attackSpeed = 1f;
+    public float attackSpeed = 1f;
 	private float attackCooldown = 0f;
     const float combatCooldown = 5;
     float lastAttackTime;
