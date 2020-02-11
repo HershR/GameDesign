@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public float lookRadius=10f;
     public float fov=45f;
-    private float angleToPlayer;
+    public float angleToPlayer;
 
     Transform target;
     NavMeshAgent agent;
@@ -35,10 +35,14 @@ public class EnemyController : MonoBehaviour
             FaceTarget();
             if(distance<=agent.stoppingDistance){
                CharacterStats targetStats= target.GetComponent<CharacterStats>();
-               if(targetStats!=null){
+               if(targetStats!=null&&stats.currentHealth>0){
                     combat.Attack(targetStats);
                 }
             }
+        }
+        if(health>stats.currentHealth){
+            FaceTarget();
+            health=stats.currentHealth;
         }
     }
     void FaceTarget(){

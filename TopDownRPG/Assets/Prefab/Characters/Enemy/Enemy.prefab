@@ -151,9 +151,6 @@ MonoBehaviour:
     name: 
     sentences:
     - 
-  FloatingTextPrefab: {fileID: 0}
-  animationCondition: 
-  playerAnime: {fileID: 0}
 --- !u!114 &2671604317417983171
 MonoBehaviour:
   m_ObjectHideFlags: 0

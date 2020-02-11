@@ -47,6 +47,9 @@ public class CharacterCombat : MonoBehaviour
 		}
 		
 	}
+	public void SneakAttack(CharacterStats targetStats){
+		opponentStats = targetStats;
+	}
 
     public void AttackHit_AnimationEvent()
     {

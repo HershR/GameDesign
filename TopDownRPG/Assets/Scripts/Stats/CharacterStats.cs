@@ -9,8 +9,11 @@ public class CharacterStats : MonoBehaviour
     public Stat armor;
     public event System.Action<int, int> OnHealthChanged;
 
+    protected Animator animator;
+
     void Awake(){
         currentHealth=maxHealth;
+        animator=GetComponentInChildren<Animator>();
     }
     void Update(){
         
@@ -29,6 +32,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
     public virtual void Die(){
+        animator.SetTrigger("die");
         //Die in someway
         //ment to be overridden
         //Debug.Log(transform.name+" died.");
