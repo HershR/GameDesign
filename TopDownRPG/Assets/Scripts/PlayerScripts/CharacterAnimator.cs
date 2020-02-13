@@ -27,6 +27,7 @@ public class CharacterAnimator : MonoBehaviour
 
         currentAttackAnimSet=defaultAttackAnimSet;
         combat.OnAttack+=OnAttack;
+        combat.OnSneakAttack+=SneakAttack;
         
     }
 
@@ -41,5 +42,9 @@ public class CharacterAnimator : MonoBehaviour
         animator.SetTrigger("attack");
         int attackIndex=Random.Range(0,currentAttackAnimSet.Length);
         overrideController[replaceableAttackAnim.name]=currentAttackAnimSet[attackIndex];
+    }
+    protected virtual void SneakAttack()
+    {
+        animator.SetTrigger("sneakAttack");
     }
 }

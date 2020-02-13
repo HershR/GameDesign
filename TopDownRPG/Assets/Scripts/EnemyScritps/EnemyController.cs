@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     CharacterCombat combat;
     EnemyStats stats;
     float health;
+    float distance;
     // Start is called before the first frame update
      void Start()
     {
@@ -28,9 +29,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
      void Update()
     {
-        float distance= Vector3.Distance(target.position,transform.position)*0.7f;
-        angleToPlayer=Vector3.Angle(target.position-transform.position,transform.forward);
-        if(distance<=lookRadius&&angleToPlayer<=fov){
+         distance= Vector3.Distance(target.position,transform.position)*0.7f;
+        if(InFieldOfView()){
             agent.SetDestination(target.position);
             FaceTarget();
             if(distance<=agent.stoppingDistance){
@@ -40,10 +40,15 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-        if(health>stats.currentHealth){
+        if(health>stats.currentHealth&&stats.currentHealth>0){
             FaceTarget();
             health=stats.currentHealth;
         }
+    }
+    public bool InFieldOfView(){
+        
+        angleToPlayer=Vector3.Angle(target.position-transform.position,transform.forward);
+        return (distance<=lookRadius&&angleToPlayer<=fov);
     }
     void FaceTarget(){
         Vector3 direction= (target.position-transform.position).normalized;

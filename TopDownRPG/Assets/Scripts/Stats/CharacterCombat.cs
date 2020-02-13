@@ -14,6 +14,7 @@ public class CharacterCombat : MonoBehaviour
 
     public bool InCombat { get; private set; }
 	public event System.Action OnAttack;
+	public event System.Action OnSneakAttack;
 
 	CharacterStats myStats;
     CharacterStats opponentStats;
@@ -49,11 +50,22 @@ public class CharacterCombat : MonoBehaviour
 	}
 	public void SneakAttack(CharacterStats targetStats){
 		opponentStats = targetStats;
+		if (OnSneakAttack != null){
+				OnSneakAttack();
+		}
 	}
 
     public void AttackHit_AnimationEvent()
     {
         opponentStats.TakeDamage(myStats.damage.GetValue());
+        if (opponentStats.currentHealth <= 0)
+		{
+			InCombat = false;
+		}
+    }
+	public void AttackSneak_AnimationEvent()
+    {
+        opponentStats.TakeDamage(opponentStats.maxHealth);
         if (opponentStats.currentHealth <= 0)
 		{
 			InCombat = false;

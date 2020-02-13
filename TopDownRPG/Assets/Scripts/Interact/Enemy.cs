@@ -18,7 +18,7 @@ public class Enemy : Interactable
         base.Interact();
         CharacterCombat playerCombat=playerManager.player.GetComponent<CharacterCombat>();
         if(playerCombat!=null){
-            if(enemy.fov!=enemy.angleToPlayer){
+            if(!enemy.InFieldOfView()){
                 playerCombat.SneakAttack(myStats);
             }else{
                 playerCombat.Attack(myStats);

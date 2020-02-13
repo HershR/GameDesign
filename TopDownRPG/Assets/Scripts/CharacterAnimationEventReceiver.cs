@@ -8,4 +8,7 @@ public class CharacterAnimationEventReceiver : MonoBehaviour
     public void AttackHitEvent(){
         combat.AttackHit_AnimationEvent();
     }
+    public void SneakAttackEvent(){
+        combat.AttackSneak_AnimationEvent();
+    }
 }
