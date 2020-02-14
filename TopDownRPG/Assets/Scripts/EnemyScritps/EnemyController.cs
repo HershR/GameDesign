@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public float lookRadius=10f;
     public float fov=45f;
+    public float defaultFov;
+    public float defaultRadius;
     public float angleToPlayer;
 
     Transform target;
@@ -15,6 +17,8 @@ public class EnemyController : MonoBehaviour
     EnemyStats stats;
     float health;
     float distance;
+
+    bool alearted;
     // Start is called before the first frame update
      void Start()
     {
@@ -23,30 +27,43 @@ public class EnemyController : MonoBehaviour
         combat=GetComponent<CharacterCombat>();
         stats=GetComponent<EnemyStats>();
         health=stats.currentHealth;
-        
+        alearted=false;
+        defaultFov=fov;
+        defaultRadius=lookRadius;   
     }
 
     // Update is called once per frame
      void Update()
     {
-         distance= Vector3.Distance(target.position,transform.position)*0.7f;
+        if(alearted==true){
+            fov=defaultFov*4;
+            lookRadius=defaultRadius*2;
+        }else {
+            fov=defaultFov;
+            lookRadius=defaultFov;
+        }
+
+        distance= Vector3.Distance(target.position,transform.position)*0.7f;
         if(InFieldOfView()){
             agent.SetDestination(target.position);
             FaceTarget();
             if(distance<=agent.stoppingDistance){
+                alearted=true;
                CharacterStats targetStats= target.GetComponent<CharacterStats>();
                if(targetStats!=null&&stats.currentHealth>0){
                     combat.Attack(targetStats);
                 }
+            }else{
+                alearted=false;
             }
         }
         if(health>stats.currentHealth&&stats.currentHealth>0){
+            alearted=true;
             FaceTarget();
             health=stats.currentHealth;
         }
     }
     public bool InFieldOfView(){
-        
         angleToPlayer=Vector3.Angle(target.position-transform.position,transform.forward);
         return (distance<=lookRadius&&angleToPlayer<=fov);
     }
