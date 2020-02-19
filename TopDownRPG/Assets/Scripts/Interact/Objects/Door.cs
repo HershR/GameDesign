@@ -4,31 +4,18 @@ using UnityEngine;
 
 public class Door : Interactable
 {
-    public Item key;
+    
     private Animator animator;
-    private Lock lockd;
+    private Lock lockScript;
 
     void Start(){
         animator=GetComponentInChildren<Animator>();
-        lockd=GetComponentInChildren<Lock>();
+        lockScript=GetComponentInChildren<Lock>();
     }
     //public Dialogue dialogue;
     public override void Interact(){
         base.Interact();
-        if(key!=null){
-            if((Inventory.instance.items).Contains(key)){
-                Open();
-            }else{
-                TriggerConversation();
-            }
-        }else
-        {
-            Open();
-        }
+        animator.SetBool("IsUnlocked",lockScript.isOpen);
         
-    }
-    void Open(){
-        Destroy(gameObject);
-        Inventory.instance.Remove(key);
     }
 }

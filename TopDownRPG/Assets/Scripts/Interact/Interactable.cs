@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
    
    public virtual void Interact()
     {
-        //Debug.Log("Interact");
+        Debug.Log("Interact");
     }
     void Start(){
         dialogueManager=FindObjectOfType<DialogueManager>();
