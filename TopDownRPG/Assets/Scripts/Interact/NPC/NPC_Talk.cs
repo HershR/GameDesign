@@ -6,7 +6,7 @@ public class NPC_Talk : Interactable
 {
     public override void Interact(){
         base.Interact();
-        Debug.Log("PLayer has interacted");
+        Debug.Log("Player has interacted");
         FaceTarget();
         TriggerConversation();   
     }
