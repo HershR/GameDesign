@@ -7,6 +7,7 @@ public class DoorAnimator : MonoBehaviour
     public AnimatorOverrideController overrideController;
     protected Animator animator;
     private Door door;
+    public GameObject obstacle;
     protected virtual void Start()
     {
 
@@ -24,5 +25,12 @@ public class DoorAnimator : MonoBehaviour
     void Update()
     {
         animator.SetBool("IsLocked",door.IsLocked);
+        if(obstacle!=null){
+            if(door.IsLocked==false){
+                obstacle.SetActive(false);
+            }else{
+                obstacle.SetActive(true);
+            }
+        }
     }
 }
