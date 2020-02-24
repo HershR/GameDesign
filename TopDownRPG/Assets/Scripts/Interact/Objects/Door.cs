@@ -24,7 +24,7 @@ public class Door : Interactable
                 Debug.Log("UnLocked");
             }else{
                 IsLocked=true;
-                //TriggerConversation();
+                TriggerConversation();
             }
         }else{
             IsLocked=false;

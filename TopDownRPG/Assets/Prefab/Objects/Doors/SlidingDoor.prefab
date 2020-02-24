@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b837d5b6c1704595f9bc80bc3eedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideController: {fileID: 22100000, guid: 1dda1a487d240464e95a4fe846107aa3, type: 2}
+  overrideController: {fileID: 0}
   obstacle: {fileID: 2818686044042086526}
 --- !u!65 &8014883794798723503
 BoxCollider:
